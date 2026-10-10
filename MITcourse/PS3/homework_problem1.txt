@@ -1,0 +1,43 @@
+1. the example means input the destination: Seattle Then input the currency: USD
+the programm compute the ticket price from EUR to USD: 400EUR * 1.09 = 436 USD
+finally print the anwser
+
+2. generally, first our programm have to get an input of a city, then it will find the price of airline in EUR
+after that, get an input of currency
+after this step, it computes anwser by formula. So users get the price in currency they want.
+
+3. we can't assign numbers, symbol, float, or any undifined str. 
+
+input destination
+input currency
+
+price = 0
+
+if destination == 'Dublin':
+    price = 21
+    if currency == 'EUR':
+        pass
+    if currency == 'TRY':
+        price = price * 16.14 
+    if currency == 'USD':
+        price = price * 1.09
+
+if destination == 'Seattle':
+    price = 400
+    if currency == 'EUR':
+        pass
+    if currency == 'TRY':
+        price = price * 16.14 
+    if currency == 'USD':
+        price = price * 1.09
+
+if destination == 'Istanbul':
+    price = 127
+    if currency == 'EUR':
+        pass
+    if currency == 'TRY':
+        price = price * 16.14 
+    if currency == 'USD':
+        price = price * 1.09
+
+print("your ticket price is", price, currency)

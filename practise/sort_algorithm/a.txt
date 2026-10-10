@@ -1,0 +1,19 @@
+START
+SET diseases TO [arthritis, chickenpox, diabetes, eczema, influenza, pneumonia, tonsillitis]
+INPUT disease
+SET found TO false
+SET index TO 0
+
+WHILE index < len(diseases):
+    IF diseases[index] == disease:
+        OUTPUT f'the disease is in the database at {index+1} position'
+        SET found TO true
+        BREAK
+    END IF
+    SET index TO index + 1
+END WHILE
+
+IF found == false:
+    OUTPUT 'not found the disease.'
+END IF
+END

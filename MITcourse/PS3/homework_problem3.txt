@@ -1,0 +1,25 @@
+1. the example shows input an area of a circle of 176.71 cm²
+after compution r = root((176.71/pi), 2) ,circumference = 2 * pi * r = 47.12 cm  
+user get the anwser of circumference of the circle of 47.12.
+2. generally, users input a value of area, after compution: radius = root((area / pi), 2)
+then circumference = 2 * pi * radius, users get output of circumference.
+3. we can just input float, so it's easy to get ValueError.
+
+
+import math?
+
+pi = 3.14159
+
+area = import("Enter the area of the cross-section (cm²):")
+
+epsilon = 0.01 
+k = (area / pi)
+guess = k/2.0 
+while abs(guess*guess - k) >= epsilon: 
+    guess = guess - (((guess**2) - k)/(2*guess)) 
+
+radius = guess
+
+circumference = 2 * pi * radius
+
+print("The estimated head circumference is:", circumference, "cm")

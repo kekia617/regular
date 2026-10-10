@@ -1,0 +1,36 @@
+def merge(left, right, compare):
+    """Assumes left and right are sorted lists and
+        compare defines an ordering on the elements.
+       Returm a new sorted (by compare) list containg the
+        sa,e elements as (left + right) would contain."""
+
+    result = []
+    i,j = 0, 0
+    while i  < len(left) and j < len(right):
+        if compare(left[i], right[j]):
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    while i < len(left):
+        result.append(left[i])
+        i += 1
+    while j < len(right):
+        result.append(right[j])
+        j += 1
+    return result
+
+def mergeSort(L, compare= lambda x, y: x < y):
+    """Assumes L is a list, compare defines an ordering
+        on elements of L
+       Return a new sorted list with the same elements as L"""
+    if len(L) < 2:
+        return L[:]
+    else:
+        middle = len(L) // 2
+        left = mergeSort(L[:middle], compare)
+        right = mergeSort(L[middle:], compare)
+        return merge(left, right, compare)
+L = [382, 43, 3, 123, 33, 123, 4111, 8, 9, 23]
+print(mergeSort(L))

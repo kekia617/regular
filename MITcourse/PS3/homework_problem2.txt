@@ -1,0 +1,51 @@
+1. the example shows first we have to know what the users eat.
+get input do eat banana: yes
+an input do eat cereal: no
+finally, we have to know the situation of users: is diabetic: no
+use three bool 
+after that to compute the blood_sugar:
+the user gets 0.5 mmol/L rise
+
+2. generally, we can use bool to get users condition, use a couple piece of code to denote how
+much blood_sugar they will get after eating that type food, according to whether diabetic.
+finally, print the rise of blood_sugar for users.
+
+3. you can just input yes or no, it's easy to get error. so we have to use if the input is 'yes'
+or 'no'.
+
+blood_sugar = 0
+
+is_diabetic = True
+is_banana = True
+is_cereal = True
+
+anwser = input('Do you want to eat a banana?')
+if anwser == 'yes':
+    is_banana = True
+else:
+    is_banana = False
+
+anwser = input('Do you want to eat a bowl of cereal?')
+if anwser == 'yes':
+    is_cereal = True
+else:
+    is_cereal = False
+
+anwser = input('Are you diabetic?')
+if anwser == 'yes':
+    is_diabetic = True
+else:
+    is_diabetic = False
+
+if is_diabetic:
+    if is_banana:
+        blood_sugar += 1.0
+    if is_cereal:
+        blood_sugar += 4.0
+else:
+    if is_banana:
+        blood_sugar += 0.5
+    if is_cereal:
+        blood_sugar += 2.0
+
+print("Estimated BSL rise:", blood_sugar,"mmol/L")
