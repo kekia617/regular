@@ -30,7 +30,7 @@ def genPowerset(L):
     """
     powerset = []
 
-    for i in range(0, 2 ** len(L)):
+    for i in range(2 ** len(L)):
         binStr = getBinaryRep(i, len(L))
         subset = []
 
@@ -42,4 +42,4 @@ def genPowerset(L):
 
     return powerset
 
-print(genPowerset(['x', 'y']))
+print(genPowerset(['x', 'y', 1, 2, 3]))
